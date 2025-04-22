@@ -68,16 +68,24 @@ function AppRouter() {
           finalFocusRef={btnRef}
         >
           <DrawerOverlay />
-          <DrawerContent>
+          <DrawerContent bg="rgba(0, 0, 0, .8)">
             <DrawerBody>
-              <Stack direction="column" spacing={4}>
-                <Link to="/home">Home</Link>
+              <Stack color="whiteAlpha.800" direction="column" spacing={4}>
+                <Link
+                  to="/home"
+                  className="relative text-gray-400 hover:text-white transition-colors duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-white after:transition-all after:duration-500"
+                >
+                  Home
+                </Link>
+
                 <Link to="/notes">Notes</Link>
                 <Link to="/calendar">Calendar</Link>
                 <Link to="/finance">Finance</Link>
                 <Link to="/contact">Contact</Link>
                 <Link to="/reviews">Reviews</Link>
-                <Button onClick={signOut}>Log Out</Button>
+                <Button color="blackAlpha.900" onClick={signOut}>
+                  Log Out
+                </Button>
               </Stack>
             </DrawerBody>
           </DrawerContent>
