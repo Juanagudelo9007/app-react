@@ -6,23 +6,82 @@ import Contact from "../pages/Contact";
 import Calendar from "../pages/Calendar";
 import Notes from "../pages/Notes";
 import { Link } from "react-router-dom";
-import { Box, Flex, Text, HStack, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Button,
+  Stack,
+  IconButton,
+  Drawer,
+  useDisclosure,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerBody,
+} from "@chakra-ui/react";
+import app from "../components/firebase";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { useRef } from "react";
 
 function AppRouter() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef();
+
+  const signOut = () => {
+    app.auth().signOut();
+  };
+
   return (
     <div>
       <Box>
-        <Flex align="center" justify="space-between">
-          <Text></Text>
-          <HStack>
-            <Link to="/Home">Home</Link>
-            <Link to="/Notes">Notes</Link>
-            <Link to="/Calendar">Calendar</Link>
-            <Link to="/Finance">Finance</Link>
-            <Link to="/Contact">Contact</Link>
-            <Link to="/Reviews">Reviews</Link>
-          </HStack>
+        <Flex align="center" justify="center">
+          <Stack
+            direction="row"
+            spacing={6}
+            display={{ base: "none", sm: "flex" }}
+            justify="center"
+            align="center"
+          >
+            <Link to="/home">Home</Link>
+            <Link to="/notes">Notes</Link>
+            <Link to="/calendar">Calendar</Link>
+            <Link to="/finance">Finance</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/reviews">Reviews</Link>
+            <Button onClick={signOut}>Log Out</Button>
+          </Stack>
         </Flex>
+        <IconButton
+          ref={btnRef}
+          onClick={onOpen}
+          colorScheme="gray"
+          icon={<HamburgerIcon />}
+          position={"absolute"}
+          top="3"
+          right="3"
+          display={{ base: "block", sm: "none" }} // Solo en pantallas pequeñas
+        />
+
+        <Drawer
+          isOpen={isOpen}
+          placement="right"
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerBody>
+              <Stack direction="column" spacing={4}>
+                <Link to="/home">Home</Link>
+                <Link to="/notes">Notes</Link>
+                <Link to="/calendar">Calendar</Link>
+                <Link to="/finance">Finance</Link>
+                <Link to="/contact">Contact</Link>
+                <Link to="/reviews">Reviews</Link>
+                <Button onClick={signOut}>Log Out</Button>
+              </Stack>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
       </Box>
       <Routes>
         <Route path="home" element={<Home />} />
