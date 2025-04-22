@@ -17,6 +17,7 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerBody,
+  DrawerCloseButton,
 } from "@chakra-ui/react";
 import app from "../components/firebase";
 import { HamburgerIcon } from "@chakra-ui/icons";
@@ -69,20 +70,46 @@ function AppRouter() {
         >
           <DrawerOverlay />
           <DrawerContent bg="rgba(0, 0, 0, .8)">
+            <DrawerCloseButton color="white" zIndex="10" />
             <DrawerBody>
-              <Stack color="whiteAlpha.800" direction="column" spacing={4}>
+              <Stack color="whiteAlpha.800" direction="column" spacing={5}>
                 <Link
                   to="/home"
-                  className="relative text-gray-400 hover:text-white transition-colors duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-white after:transition-all after:duration-500"
+                  className="relative text-gray-400 hover:text-white transition-transform duration-500 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[75%] after:h-[3px] after:bg-white after:transition-all after:duration-500 font-bold"
                 >
                   Home
                 </Link>
 
-                <Link to="/notes">Notes</Link>
-                <Link to="/calendar">Calendar</Link>
-                <Link to="/finance">Finance</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/reviews">Reviews</Link>
+                <Link
+                  className="relative text-gray-400 hover:text-white transition-transform duration-500 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[75%] after:h-[3px] after:bg-white after:transition-all after:duration-500 font-bold"
+                  to="/notes"
+                >
+                  Notes
+                </Link>
+                <Link
+                  className="relative text-gray-400 hover:text-white transition-transform duration-500 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[75%] after:h-[3px] after:bg-white after:transition-all after:duration-500 font-bold"
+                  to="/calendar"
+                >
+                  Calendar
+                </Link>
+                <Link
+                  className="relative text-gray-400 hover:text-white transition-transform duration-500 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[75%] after:h-[3px] after:bg-white after:transition-all after:duration-500 font-bold"
+                  to="/finance"
+                >
+                  Finance
+                </Link>
+                <Link
+                  className="relative text-gray-400 hover:text-white transition-transform duration-500 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[75%] after:h-[3px] after:bg-white after:transition-all after:duration-500 font-bold"
+                  to="/contact"
+                >
+                  Contact
+                </Link>
+                <Link
+                  className="relative text-gray-400 hover:text-white transition-transform duration-500 transform hover:scale-105 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-[75%] after:h-[3px] after:bg-white after:transition-all after:duration-500 font-bold"
+                  to="/reviews"
+                >
+                  Reviews
+                </Link>
                 <Button color="blackAlpha.900" onClick={signOut}>
                   Log Out
                 </Button>
