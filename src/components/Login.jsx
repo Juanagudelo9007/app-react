@@ -57,7 +57,7 @@ function Login(props) {
             <FormLabel>Password</FormLabel>
             <Input type="password" name="passwordField" />
             <Button type="submit">
-              {isLoggedIn ? "Register" : "Please Log in"}
+              {isLoggedIn ? "Register" : "Log in"}
             </Button>
             <FormHelperText>We'll never share your email.</FormHelperText>
           </FormControl>

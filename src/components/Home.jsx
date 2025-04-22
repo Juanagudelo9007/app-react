@@ -1,13 +1,8 @@
-import React from 'react';
-import app from './firebase';
+import React from 'react'
 
 function Home() {
   return (
-    <div>
-        <div>
-          
-        </div>
-    </div>
+    <div>Home</div>
   )
 }
 
