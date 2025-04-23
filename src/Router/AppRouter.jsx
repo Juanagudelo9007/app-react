@@ -42,7 +42,12 @@ function AppRouter() {
             justify="center"
             align="center"
           >
-            <Link to="/home">Home</Link>
+            <Link
+              className="relative transition-transform duration-500 transform hover:scale-125 after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-500 font-bold  "
+              to="/home"
+            >
+              Home
+            </Link>
             <Link to="/notes">Notes</Link>
             <Link to="/calendar">Calendar</Link>
             <Link to="/finance">Finance</Link>
