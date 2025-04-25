@@ -55,7 +55,7 @@ function AppRouter() {
               Notes
             </Link>
             <Link
-              className=" hover:animate-bounce relative transition-transform duration-1000 transform  after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
+              className="   hover:animate-bounce relative transition-transform duration-1000 transform  after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
               to="/calendar"
             >
               Calendar
@@ -63,7 +63,9 @@ function AppRouter() {
             <Link to="/finance">Finance</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/reviews">Reviews</Link>
-            <Button onClick={signOut}>Log Out</Button>
+            <Button 
+             size="sm"
+             onClick={signOut}>Log Out</Button>
           </Stack>
         </Flex>
         <IconButton
