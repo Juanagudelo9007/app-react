@@ -48,9 +48,12 @@ function AppRouter() {
             >
               Home
             </Link>
-            <Link 
-            className=""
-            to="/notes">Notes</Link>
+            <Link
+              className=" relative transition-transform duration-1000 transform hover:rotate-[360deg] after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
+              to="/notes"
+            >
+              Notes
+            </Link>
             <Link to="/calendar">Calendar</Link>
             <Link to="/finance">Finance</Link>
             <Link to="/contact">Contact</Link>
