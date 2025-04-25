@@ -43,7 +43,7 @@ function AppRouter() {
             align="center"
           >
             <Link
-              className=" relative transition-transform duration-1000 transform hover:rotate-[360deg] after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
+              className=" animate-bounce relative transition-transform duration-1000 transform  after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
               to="/home"
             >
               Home
