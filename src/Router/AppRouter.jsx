@@ -33,7 +33,7 @@ function AppRouter() {
 
   return (
     <div>
-      <Box>
+      <Box mt="3">
         <Flex align="center" justify="center">
           <Stack
             direction="row"
@@ -43,18 +43,23 @@ function AppRouter() {
             align="center"
           >
             <Link
-              className=" animate-bounce relative transition-transform duration-1000 transform  after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
+              className=" hover:animate-bounce relative transition-transform duration-1000 transform  after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
               to="/home"
             >
               Home
             </Link>
             <Link
-              className=" relative transition-transform duration-1000 transform hover:rotate-[360deg] after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
+              className=" hover:animate-bounce relative transition-transform duration-1000 transform  after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
               to="/notes"
             >
               Notes
             </Link>
-            <Link to="/calendar">Calendar</Link>
+            <Link
+              className=" hover:animate-bounce relative transition-transform duration-1000 transform  after:content-[''] after:absolute after:left-0 after:bottom-0  after:w-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-red-600 after:transition-all  after:duration-1000  font-bold "
+              to="/calendar"
+            >
+              Calendar
+            </Link>
             <Link to="/finance">Finance</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/reviews">Reviews</Link>
