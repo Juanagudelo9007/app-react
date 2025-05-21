@@ -33,7 +33,7 @@ function AppRouter() {
 
   return (
     <div>
-      <Box mt="3">
+      <Box bg="rgba(0,0,0,0.2)" backdropFilter="blur(0px)" boxShadow="xl" p="3">
         <Flex align="center" justify="center">
           <Stack
             direction="row"
