@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="min-h-screen bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1950&q=80')] font-sans">
+    <div className="min-h-screen bg-cover bg-center bg-[url('https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] font-sans">
       <div className="p-6 max-w-7xl mx-auto text-center">
-        <p className="text-6xl font-bold text-slate-700">Enjoy This Test!</p>
+        <p className="text-6xl font-extrabold text-slate-900  animate-bounce">
+          Welcome Back!
+        </p>
         <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-8">
           <div className="bg-white/30 backdrop-blur-sm border border-white/30 p-6 rounded-[10px] shadow-lg cursor-pointer mt-4 hover:scale-110 transition-all duration-500">
             <h2 className="">Notes</h2>
