@@ -6,6 +6,9 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
+const link = document.createElement("link");
+link.href = "";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>

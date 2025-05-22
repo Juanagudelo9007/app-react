@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="min-h-screen bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1950&q=80')]">
+    <div className="min-h-screen bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1950&q=80')] font-sans">
       <div className="p-6 max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mt-6">Welcome!</h1>
-        <p>some text here</p>
+        <p className="text-6xl font-bold text-slate-700">Enjoy This Test!</p>
         <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-8">
           <div className="bg-white/30 backdrop-blur-sm border border-white/30 p-6 rounded-[10px] shadow-lg cursor-pointer mt-4 hover:scale-110 transition-all duration-500">
-            <h2 className="font-bold">Notes</h2>
+            <h2 className="">Notes</h2>
             <p>Take Notes, and save them</p>
             <Link className="text-sky-500 hover:underline" to="/notes">
               Go Notes
