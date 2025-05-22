@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-cover bg-center bg-[url('https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] font-sans">
       <div className="p-6 max-w-7xl mx-auto text-center">
-        <p className="text-7xl font-extrabold text-white  animate-bounce">
+        <p className="text-4xl sm:text-6xl md:text-6xl font-extrabold text-slate-100 animate-bounce">
           Welcome Back!
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-8">
