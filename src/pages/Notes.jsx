@@ -18,10 +18,10 @@ function Notes() {
           <div
             key={c.id}
             contentEditable="false"
-            className="relative w-60 h-60  border-black bg-yellow-200 mt-8 text-center px-2"
+            className="relative w-60 h-60  border-black bg-yellow-200 mt-8 text-center py-2"
           >
             {c.text}
-            <button className="absolute right-2 top-0" onClick={create}>
+            <button className="absolute right-2 top-1" onClick={create}>
               +
             </button>
             <textarea
