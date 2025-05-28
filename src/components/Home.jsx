@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { FiGithub } from "react-icons/fi";
 
 function Home() {
   return (
-    <div className="min-h-screen bg-cover bg-center bg-[url('https://plus.unsplash.com/premium_photo-1670179694048-5e4a1dcad9b6?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] font-sans">
-      <div className="p-6 max-w-7xl mx-auto text-center">
+    <div className="min-h-screen bg-cover bg-center bg-[url('https://plus.unsplash.com/premium_photo-1670179694048-5e4a1dcad9b6?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] font-sans overflow-hidden">
+      <div className="p-6 max-w-7xl mx-auto text-center overflow-hidden">
         <motion.p
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1.1 }}
@@ -18,7 +19,7 @@ function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             type: "spring",
-            stiffness: 100,
+            stiffness: 70,
             damping: 5,
             delay: 0.7,
           }}
@@ -51,6 +52,29 @@ function Home() {
             <Link to="/reviews">Go Reviews</Link>
           </div>
         </motion.div>
+      </div>
+      <div className="absolute bottom-0 right-0 p-4 text-white flex space-x-4">
+        <a
+          href="https://github.com/Juanagudelo9007"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FiGithub className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 font-extrabold" />
+        </a>
+        <a
+          href="https://github.com/Juanagudelo9007"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FiGithub className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 font-extrabold" />
+        </a>
+        <a
+          href="https://github.com/Juanagudelo9007"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FiGithub className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 font-extrabold" />
+        </a>
       </div>
     </div>
   );
