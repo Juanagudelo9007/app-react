@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 
 function Home() {
   return (
@@ -53,28 +53,38 @@ function Home() {
           </div>
         </motion.div>
       </div>
-      <div className="absolute bottom-0 right-0 p-4 text-white flex space-x-4">
-        <a
+
+      <div className="absolute bottom-0 right-0 p-4 text-white hidden sm:flex space-x-4">
+        <motion.a
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.3, duration: 0.6 }}
           href="https://github.com/Juanagudelo9007"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FiGithub className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 font-extrabold" />
-        </a>
-        <a
+          <FiGithub className="w-4 h-4 md:w-6 md:h-6 font-extrabold hover:text-black transition-colors duration-300" />
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.3, duration: 0.6 }}
+          href="https://www.linkedin.com/in/juan-agudelo-294b40232/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FiLinkedin className="w-4 h-4 md:w-6 md:h-6 font-extrabold hover:text-black transition-colors duration-300" />
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.3, duration: 0.6 }}
           href="https://github.com/Juanagudelo9007"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FiGithub className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 font-extrabold" />
-        </a>
-        <a
-          href="https://github.com/Juanagudelo9007"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FiGithub className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 font-extrabold" />
-        </a>
+          <FiInstagram className="w-4 h-4 md:w-6 md:h-6 font-extrabold hover:text-black transition-colors duration-300" />
+        </motion.a>
       </div>
     </div>
   );
