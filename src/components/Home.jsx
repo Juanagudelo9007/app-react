@@ -13,7 +13,17 @@ function Home() {
         >
           Welcome Back!
         </motion.p>
-        <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 5,
+            delay: 0.7,
+          }}
+          className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-8"
+        >
           <div className="bg-white/0 backdrop-blur-sm border border-white/30 p-6 rounded-[10px] shadow-[3px_2px_6px_2px_rgba(0,0,0,0.3)] cursor-pointer mt-4 hover:scale-110 transition-all duration-500 text-white font-bold hover:underline">
             <h2>Notes</h2>
             <p>Take Notes, and save them</p>
@@ -40,7 +50,7 @@ function Home() {
             <p>Take Notes, and save them</p>
             <Link to="/reviews">Go Reviews</Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
