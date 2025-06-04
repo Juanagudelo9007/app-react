@@ -16,7 +16,9 @@ function App() {
 
   return (
     <div>
-      <div>{user ? <AppRouter /> : <Login setUser={setUser} />}</div>
+      <div>
+        {user ? <AppRouter user={user} /> : <Login setUser={setUser} />}
+      </div>
     </div>
   );
 }

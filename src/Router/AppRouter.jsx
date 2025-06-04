@@ -23,7 +23,7 @@ import app from "../components/firebase";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useRef } from "react";
 
-function AppRouter() {
+function AppRouter({ user }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
@@ -156,7 +156,7 @@ function AppRouter() {
         <Route path="finance" element={<Finance />} />
         <Route path="contact" element={<Contact />} />
         <Route path="calendar" element={<Calendar />} />
-        <Route path="notes" element={<Notes />} />
+        <Route path="notes" element={<Notes user={user} />} />
       </Routes>
     </div>
   );

@@ -17,10 +17,10 @@ function Login(props) {
     app
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((userFirebase) => {
-        console.log("user was created", userFirebase);
+      .then((userCrendential) => {
+        console.log("user was created", userCrendential);
+        props.setUser(userCrendential.user);
         setIsRegistered(true);
-        props.setUser(userFirebase);
       });
   };
 
@@ -28,9 +28,9 @@ function Login(props) {
     app
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then((userFirebase) => {
-        console.log("You are logged in with", userFirebase);
-        props.setUser(userFirebase);
+      .then((userCrendential) => {
+        console.log("You are logged in with", userCrendential);
+        props.setUser(userCrendential.user);
       });
   };
 
@@ -56,9 +56,7 @@ function Login(props) {
             <Input type="email" name="emailField" />
             <FormLabel>Password</FormLabel>
             <Input type="password" name="passwordField" />
-            <Button type="submit">
-              {isLoggedIn ? "Register" : "Log in"}
-            </Button>
+            <Button type="submit">{isLoggedIn ? "Register" : "Log in"}</Button>
             <FormHelperText>We'll never share your email.</FormHelperText>
           </FormControl>
         </form>

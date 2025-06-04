@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
 const app = firebase.initializeApp({
   projectId: "app-react90",
@@ -11,4 +12,8 @@ const app = firebase.initializeApp({
   measurementId: "G-2J2EHTJX4L",
 });
 
+const auth = app.auth();
+const db = app.firestore();
+
+export { auth, db };
 export default app;

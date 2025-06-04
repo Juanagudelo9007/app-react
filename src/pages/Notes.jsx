@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { db } from "../components/firebase";
 
-function Notes() {
+function Notes({ user }) {
   const [cards, sertCards] = useState([{ id: 1, text: "" }]);
 
   const create = () => {
@@ -8,13 +9,11 @@ function Notes() {
   };
 
   const btnDelete = (index) => {
-
-    if(cards.length === 1){
-      return; 
+    if (cards.length === 1) {
+      return;
     }
     const erase = cards.filter((p) => p.id !== index);
     sertCards(erase);
-    
   };
 
   return (
