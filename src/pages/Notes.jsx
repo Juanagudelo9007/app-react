@@ -8,8 +8,13 @@ function Notes() {
   };
 
   const btnDelete = (index) => {
+
+    if(cards.length === 1){
+      return; 
+    }
     const erase = cards.filter((p) => p.id !== index);
     sertCards(erase);
+    
   };
 
   return (
