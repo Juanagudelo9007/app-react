@@ -73,7 +73,7 @@ function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FiLinkedin className="w-4 h-4 md:w-6 md:h-6 font-extrabold hover:text-black transition-colors duration-300" />
+          <FiLinkedin className="w-4 h-4 md:w-6 md:h-6 font-extrabold hover:text-[#0077B5] transition-colors duration-300" />
         </motion.a>
         <motion.a
           initial={{ opacity: 0, scale: 0.5 }}
@@ -83,7 +83,7 @@ function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FiInstagram className="w-4 h-4 md:w-6 md:h-6 font-extrabold hover:text-black transition-colors duration-300" />
+          <FiInstagram className="w-4 h-4 md:w-6 md:h-6 font-extrabold hover:text-[#E1306C] transition-colors duration-300  " />
         </motion.a>
       </div>
     </div>

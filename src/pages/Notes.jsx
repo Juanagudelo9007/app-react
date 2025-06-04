@@ -21,17 +21,22 @@ function Notes() {
         {cards.map((c) => (
           <div
             key={c.id}
-            className="relative w-60 h-60  border-black bg-yellow-200 mt-8 text-center py-2"
+            className="relative w-60 h-60  border-black bg-yellow-200 mt-8 text-center py-2 pt-6"
           >
             {c.text}
-            <button className="absolute right-2 top-1" onClick={create}>
+            <button className="absolute left-2 top-1" onClick={create}>
               +
             </button>
             <textarea
               style={{ resize: "none" }}
-              className="w-[80%] h-full resize-none text-center outline-none"
+              className=" mt-6 w-[70%] h-[80%] resize-none text-center outline-none"
             ></textarea>
-            <button onClick={() => btnDelete(c.id)}>delete</button>
+            <button
+              className="absolute right-2 top-1"
+              onClick={() => btnDelete(c.id)}
+            >
+              x
+            </button>
           </div>
         ))}
       </div>
