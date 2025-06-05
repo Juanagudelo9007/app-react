@@ -1,8 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { db } from "../components/firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 function Notes({ user }) {
   const [cards, sertCards] = useState([{ id: 1, text: "" }]);
+
+  const load = async (uid) => {
+    const docRef = doc(db, "Notas", uid);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      sertCards(docSnap.data().cards);
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      load(user.uid);
+    }
+  }, [user]);
 
   const create = () => {
     sertCards([...cards, { id: cards.length + 1, text: "" }]);
