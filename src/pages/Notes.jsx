@@ -1,16 +1,21 @@
 import { useState, useEffect } from "react";
 import { db } from "../components/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 function Notes({ user }) {
-  const [cards, sertCards] = useState([{ id: 1, text: "" }]);
+  const [cards, setCards] = useState([{ id: 1, text: "" }]);
 
   const load = async (uid) => {
     const docRef = doc(db, "Notas", uid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      sertCards(docSnap.data().cards);
+      setCards(docSnap.data().cards);
     }
+  };
+
+  const save = async (uid, notes) => {
+    const docRef = doc(db, "Notas", uid);
+    await setDoc(docRef, { cards: notes });
   };
 
   useEffect(() => {
@@ -20,7 +25,9 @@ function Notes({ user }) {
   }, [user]);
 
   const create = () => {
-    sertCards([...cards, { id: cards.length + 1, text: "" }]);
+    const newCard = [...cards, { id: cards.length + 1, text: "" }];
+    setCards(newCard);
+    save(user.uid, newCard);
   };
 
   const btnDelete = (index) => {
@@ -28,7 +35,8 @@ function Notes({ user }) {
       return;
     }
     const erase = cards.filter((p) => p.id !== index);
-    sertCards(erase);
+    setCards(erase);
+    save(user.uid, erase);
   };
 
   return (
@@ -47,6 +55,14 @@ function Notes({ user }) {
               +
             </button>
             <textarea
+              value={c.text}
+              onChange={(e) => {
+                const newCards = cards.map((card) =>
+                  card.id === c.id ? { ...card, text: e.target.value } : card
+                );
+                setCards(newCards);
+              }}
+              onBlur={() => save(user.uid, cards)}
               style={{ resize: "none" }}
               className=" mt-6 w-[70%] h-[80%] resize-none text-center outline-none"
             ></textarea>
