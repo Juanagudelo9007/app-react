@@ -25,9 +25,8 @@ function Notes({ user }) {
   }, [user]);
 
   const create = () => {
-    const newCard = [...cards, { id: cards.length + 1, text: "" }];
+    const newCard = [...cards, { id: Date.now(), text: "" }];
     setCards(newCard);
-    save(user.uid, newCard);
   };
 
   const btnDelete = (index) => {
@@ -36,7 +35,19 @@ function Notes({ user }) {
     }
     const erase = cards.filter((p) => p.id !== index);
     setCards(erase);
-    save(user.uid, erase);
+  };
+
+  const textChange = (id, text) => {
+    const updatedCards = cards.map((card) =>
+      card.id === id ? { ...card, text } : card
+    );
+    setCards(updatedCards);
+  };
+
+  const blur = () => {
+    if (user) {
+      save(user.uid, cards);
+    }
   };
 
   return (
@@ -56,13 +67,8 @@ function Notes({ user }) {
             </button>
             <textarea
               value={c.text}
-              onChange={(e) => {
-                const newCards = cards.map((card) =>
-                  card.id === c.id ? { ...card, text: e.target.value } : card
-                );
-                setCards(newCards);
-              }}
-              onBlur={() => save(user.uid, cards)}
+              onChange={(e) => textChange(c.id, e.target.value)}
+              onBlur={blur}
               style={{ resize: "none" }}
               className=" mt-6 w-[70%] h-[80%] resize-none text-center outline-none"
             ></textarea>
